@@ -227,9 +227,24 @@ class _MoviesScreenState extends State<MoviesScreen> {
             height: 177,
             // height: 200,
           ),
-          MyMoviesListBuilderWidget(
-            title: "Popular on Netflix",
-            imageList: ImageConstant.popularOnNetflix,
+          ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: ImageConstant.homePageMap.length,
+            itemBuilder: (context, index) => index == 3
+                ? MyMoviesListBuilderWidget(
+                    title: "Netflix Originals",
+                    imageList: ImageConstant.netflixOriginals,
+                    visible: false,
+                    height: 251,
+                    width: 154.04,
+                    // height: 200,
+                  )
+                : MyMoviesListBuilderWidget(
+                    title: ImageConstant.homePageMap[index]["title"],
+                    imageList: ImageConstant.homePageMap[index]
+                        ["image"], // width: 150,
+                  ),
           ),
         ],
       ),

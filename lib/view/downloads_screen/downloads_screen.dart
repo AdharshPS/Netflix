@@ -27,20 +27,26 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Introducing Downloads For You",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 19.63,
-                fontWeight: FontWeight.w700),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Introducing Downloads For You",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 19.63,
+                  fontWeight: FontWeight.w700),
+            ),
           ),
           SizedBox(height: 10),
-          Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit quam dui, vivamus bibendum ut. A morbi mi tortor ut felis non accumsan accumsan quis. Massa, id ut ipsum aliquam enim non posuere pulvinar diam.",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 10.78,
-                fontWeight: FontWeight.w400),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit quam dui, vivamus bibendum ut. A morbi mi tortor ut felis non accumsan accumsan quis. Massa, id ut ipsum aliquam enim non posuere pulvinar diam.",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 10.78,
+                  fontWeight: FontWeight.w400),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(35.0),

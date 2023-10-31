@@ -50,7 +50,7 @@ class MyMoviesListBuilderWidget extends StatelessWidget {
                           color: ColorConstant.containerColor,
                           image: DecorationImage(
                               image: AssetImage(imageList[index]),
-                              fit: BoxFit.fitHeight),
+                              fit: BoxFit.fill),
                         ),
                         height: height,
                         width: width,

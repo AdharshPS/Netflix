@@ -13,7 +13,6 @@ class MoreScreen extends StatefulWidget {
 }
 
 class _MoreScreenState extends State<MoreScreen> {
-  int currentIndex = ImageConstant.moreList.length;
   double height = 60.07;
   double width = 65.29;
 
@@ -199,12 +198,35 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(height: 8),
                   Row(
                     children: List.generate(
-                      ImageConstant.moreList.length,
-                      (index) => CopyLinkWidget(
-                        image: ImageConstant.moreList[index],
-                        index: index,
-                        currentIndex: currentIndex,
-                      ),
+                      ImageConstant.moreList.length + 1,
+                      (index) => index == ImageConstant.moreList.length
+                          ? CopyLinkWidget()
+                          : Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Container(
+                                    width: 36,
+                                    height: 33.6,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              ImageConstant.moreList[index]),
+                                          fit: BoxFit.fill),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                  child: VerticalDivider(
+                                    width: 50,
+                                    thickness: 1,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ],
+                            ),
                     ),
                   ),
                 ],
