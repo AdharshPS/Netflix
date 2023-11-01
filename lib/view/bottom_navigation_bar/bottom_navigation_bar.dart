@@ -31,7 +31,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xFF121212),
-        unselectedItemColor: Colors.grey[700],
+        unselectedItemColor: Color(0xFF8C8787),
         selectedItemColor: Colors.white,
         unselectedFontSize: 8.2,
         selectedFontSize: 8.2,
