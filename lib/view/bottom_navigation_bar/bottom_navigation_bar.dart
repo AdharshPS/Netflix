@@ -7,7 +7,9 @@ import 'package:netflix_full_ui/view/more_screen/more_screen.dart';
 import 'package:netflix_full_ui/view/search_screen/search_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
-  const BottomNavigationBarScreen({super.key});
+  const BottomNavigationBarScreen({super.key, this.f});
+
+  final int? f;
 
   @override
   State<BottomNavigationBarScreen> createState() =>

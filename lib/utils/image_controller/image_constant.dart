@@ -14,6 +14,13 @@ class ImageConstant {
     "assets/images/Rectangle 5.png",
   ];
 
+  static List<String> carousalImage = [
+    "assets/images/carousal(breaking bad).jpg",
+    "assets/images/carousal(dark).jpg",
+    "assets/images/carousal(money heist).webp",
+    "assets/images/Rectangle 26.png",
+  ];
+
   //home page
 
   static List<String> previews = [

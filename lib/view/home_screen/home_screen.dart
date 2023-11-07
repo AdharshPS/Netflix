@@ -1,10 +1,12 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix_full_ui/data_base/data_base.dart';
 import 'package:netflix_full_ui/utils/color_controller/color_controller.dart';
 import 'package:netflix_full_ui/utils/image_controller/image_constant.dart';
+import 'package:netflix_full_ui/view/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:netflix_full_ui/view/home_screen/widgets/my_movies_list_builder.dart';
 import 'package:netflix_full_ui/view/movies_screen/movies_screen.dart';
 import 'package:netflix_full_ui/view/mylist_screen/mylist_sceen.dart';
-import 'package:netflix_full_ui/view/tv_shows_screen/tv_shows_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -14,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int f = 0;
   //text style
   TextStyle netflixTextStyle = TextStyle(
     color: ColorConstant.textColor,
@@ -42,12 +45,22 @@ class _HomeScreenState extends State<HomeScreen> {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(children: [
-              Container(
-                height: 415,
-                width: double.infinity,
-                child: Image.asset(
-                  ImageConstant.homePageImage,
-                  fit: BoxFit.cover,
+              CarouselSlider.builder(
+                itemCount: DataBase.childLogo.length,
+                itemBuilder: (context, index, realIndex) => Container(
+                  height: 415,
+                  width: double.infinity,
+                  child: Image.asset(
+                    // ImageConstant.homePageImage,
+                    ImageConstant.carousalImage[index],
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                options: CarouselOptions(
+                  // reverse: true,
+                  height: 415,
+                  autoPlay: true,
+                  viewportFraction: 1,
                 ),
               ),
               Container(
@@ -96,12 +109,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     //   ],
                     // )
                     TextButton(
-                      onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TvShowsScreen(),
-                        ),
-                      ),
+                      onPressed: () {
+                        f = 1;
+                        BottomNavigationBarScreen(
+                          f: f,
+                        );
+                      },
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => TvShowsScreen(),
+                      //   ),
+                      // ),
                       child: Text(
                         "TV Shows",
                         style: netflixTextStyle,
